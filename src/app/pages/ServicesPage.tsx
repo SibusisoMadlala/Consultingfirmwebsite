@@ -26,6 +26,7 @@ export function ServicesPage() {
       tagline: "Maximising the value of your assets throughout their lifecycle.",
       description:
         "We provide strategic asset management solutions that ensure your buildings, infrastructure, and facilities deliver consistent performance. Our approach reduces costs, extends asset life, and enhances long‑term value for owners and stakeholders.",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1080",
     },
     {
       id: "contract",
@@ -34,6 +35,7 @@ export function ServicesPage() {
       tagline: "Turning agreements into successful outcomes.",
       description:
         "Our team manages contracts with precision, ensuring compliance, transparency, and efficiency. We safeguard your interests by monitoring obligations, mitigating risks, and streamlining processes so projects run smoothly from start to finish.",
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1080",
     },
     {
       id: "cost",
@@ -42,6 +44,7 @@ export function ServicesPage() {
       tagline: "Financial clarity for every project.",
       description:
         "We deliver accurate cost planning, budgeting, and control to keep projects on track. By balancing quality with affordability, we help clients achieve maximum value without compromising standards.",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1080",
     },
     {
       id: "development",
@@ -50,6 +53,7 @@ export function ServicesPage() {
       tagline: "From inception to handover.",
       description:
         "We manage the project from the time it is just a thought to its handover. Our development managers ensure they bring your vision to life.",
+      image: "https://images.unsplash.com/photo-1507537362848-9c7e70b7b5c1?auto=format&fit=crop&q=80&w=1080",
     },
     {
       id: "facility",
@@ -58,6 +62,7 @@ export function ServicesPage() {
       tagline: "Efficient spaces, sustainable operations.",
       description:
         "Our facility management services cover the day‑to‑day operations of buildings, ensuring safety, comfort, and sustainability. From maintenance to energy efficiency, we create environments where people and businesses thrive.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1080",
     },
     {
       id: "procurement",
@@ -66,6 +71,7 @@ export function ServicesPage() {
       tagline: "Smart sourcing, reliable delivery.",
       description:
         "We manage procurement with a focus on quality, cost, and timeliness. Our expertise in supplier relations and tender processes guarantees that clients receive the best materials and services at the right price.",
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1080",
     },
     {
       id: "project",
@@ -74,6 +80,7 @@ export function ServicesPage() {
       tagline: "Delivering projects on time, every time.",
       description:
         "Our project management team oversees planning, execution, and delivery with meticulous attention to detail. We coordinate stakeholders, manage risks, and ensure that every project meets its objectives within scope, budget, and schedule.",
+      image: "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?auto=format&fit=crop&q=80&w=1080",
     },
     {
       id: "property",
@@ -82,6 +89,7 @@ export function ServicesPage() {
       tagline: "Protecting and growing your property investments.",
       description:
         "We provide comprehensive property management services that enhance asset value and tenant satisfaction. From leasing and maintenance to compliance and reporting, we ensure your properties remain profitable and well‑maintained.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1080",
     },
   ];
 
@@ -132,8 +140,12 @@ export function ServicesPage() {
                   </p>
                 </div>
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                  <div className="bg-gradient-to-br from-blue-50 to-gray-100 rounded-lg p-8 h-64 flex items-center justify-center">
-                    <service.icon className="h-32 w-32 text-blue-600 opacity-20" />
+                  <div className="rounded-lg overflow-hidden h-64 lg:h-80 shadow-lg">
+                    <ImageWithFallback
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
                   </div>
                 </div>
               </div>

@@ -192,15 +192,26 @@ export function AboutPage() {
             </p>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow w-64 text-center">
-              <p className="text-gray-900 font-medium">
-                Built Environment Professionals South Africa
-              </p>
+            <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow bg-opacity-90">
+              <ImageWithFallback
+                src="/images/image002.png"
+                alt="Affiliation Partner"
+                className="h-24 w-auto object-contain"
+              />
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow w-64 text-center">
-              <p className="text-gray-900 font-medium">
-                Professional association memberships and certifications
-              </p>
+            <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow bg-opacity-90">
+              <ImageWithFallback
+                src="/images/image003.png"
+                alt="Affiliation Partner"
+                className="h-24 w-auto object-contain"
+              />
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow bg-opacity-90">
+              <ImageWithFallback
+                src="/images/image004.png"
+                alt="Affiliation Partner"
+                className="h-24 w-auto object-contain"
+              />
             </div>
           </div>
         </div>

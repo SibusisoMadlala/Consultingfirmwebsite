@@ -29,13 +29,11 @@ export function Layout() {
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-              <Building2 className="h-8 w-8 text-blue-600" />
-              <div className="flex flex-col">
-                <span className="font-bold text-xl text-gray-900">
-                  IKHAYA
-                </span>
-                <span className="text-xs text-gray-600">Consulting</span>
-              </div>
+              <img 
+                src="/images/Logo%203.png" 
+                alt="IKHAYA Consulting" 
+                className="h-12 w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Navigation */}
