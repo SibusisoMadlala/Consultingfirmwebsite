@@ -1,5 +1,21 @@
 import { MapPin, Phone, Mail, Globe } from "lucide-react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+
+// Fix Leaflet's default icon path issues with webpack/vite
+import icon from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
+
+const DefaultIcon = L.icon({
+  iconUrl: icon,
+  shadowUrl: iconShadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 export function ContactPage() {
   const offices = [
@@ -10,43 +26,43 @@ export function ContactPage() {
       address: "155 West Street, Sandown, Sandton",
       postal: "Johannesburg, Gauteng, 2192",
       phone: "+27 10 016 6101",
-      position: { top: "68%", left: "52%" },
+      coordinates: [-26.1042, 28.0558] as [number, number],
     },
     {
       city: "New York",
       country: "USA",
       address: "Representative Office",
-      position: { top: "38%", left: "23%" },
+      coordinates: [40.7128, -74.0060] as [number, number],
     },
     {
       city: "London",
       country: "United Kingdom",
       address: "Representative Office",
-      position: { top: "30%", left: "48%" },
+      coordinates: [51.5074, -0.1278] as [number, number],
     },
     {
       city: "São Paulo",
       country: "Brazil",
       address: "Representative Office",
-      position: { top: "75%", left: "30%" },
+      coordinates: [-23.5505, -46.6333] as [number, number],
     },
     {
       city: "Dubai",
       country: "UAE",
       address: "Representative Office",
-      position: { top: "42%", left: "56%" },
+      coordinates: [25.2048, 55.2708] as [number, number],
     },
     {
       city: "Beijing",
       country: "China",
       address: "Representative Office",
-      position: { top: "36%", left: "74%" },
+      coordinates: [39.9042, 116.4074] as [number, number],
     },
     {
       city: "Sydney",
       country: "Australia",
       address: "Representative Office",
-      position: { top: "82%", left: "88%" },
+      coordinates: [-33.8688, 151.2093] as [number, number],
     },
   ];
 
@@ -85,96 +101,33 @@ export function ContactPage() {
           </div>
 
           {/* World Map with Office Markers */}
-          <div className="relative bg-gray-50 rounded-lg p-8 mb-12">
-            <div className="relative w-full" style={{ paddingTop: "50%" }}>
-              {/* Simple world map representation */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <svg
-                  viewBox="0 0 1000 500"
-                  className="w-full h-full"
-                  style={{ maxHeight: "500px" }}
-                >
-                  {/* Ocean background */}
-                  <rect width="1000" height="500" fill="#E5F2FF" />
-                  
-                  {/* Simplified continents */}
-                  {/* Africa */}
-                  <path
-                    d="M 480 200 L 520 250 L 540 320 L 510 350 L 480 340 L 470 280 Z"
-                    fill="#CBD5E1"
-                    stroke="#94A3B8"
-                    strokeWidth="1"
-                  />
-                  
-                  {/* Europe */}
-                  <path
-                    d="M 470 140 L 500 150 L 510 180 L 490 190 L 475 170 Z"
-                    fill="#CBD5E1"
-                    stroke="#94A3B8"
-                    strokeWidth="1"
-                  />
-                  
-                  {/* Asia */}
-                  <path
-                    d="M 520 140 L 600 150 L 680 160 L 720 180 L 740 200 L 700 240 L 650 220 L 600 210 L 560 200 L 540 180 Z"
-                    fill="#CBD5E1"
-                    stroke="#94A3B8"
-                    strokeWidth="1"
-                  />
-                  
-                  {/* Australia */}
-                  <path
-                    d="M 800 380 L 880 390 L 900 420 L 870 430 L 820 420 L 800 400 Z"
-                    fill="#CBD5E1"
-                    stroke="#94A3B8"
-                    strokeWidth="1"
-                  />
-                  
-                  {/* North America */}
-                  <path
-                    d="M 150 150 L 200 140 L 250 160 L 270 200 L 240 240 L 200 250 L 160 230 L 140 190 Z"
-                    fill="#CBD5E1"
-                    stroke="#94A3B8"
-                    strokeWidth="1"
-                  />
-                  
-                  {/* South America */}
-                  <path
-                    d="M 240 280 L 280 300 L 300 350 L 290 400 L 260 390 L 240 360 L 230 320 Z"
-                    fill="#CBD5E1"
-                    stroke="#94A3B8"
-                    strokeWidth="1"
-                  />
-                  
-                  {/* Office location markers */}
-                  {offices.map((office) => {
-                    const x = parseFloat(office.position.left) * 10;
-                    const y = parseFloat(office.position.top) * 5;
-                    return (
-                      <g key={office.city}>
-                        <circle
-                          cx={x}
-                          cy={y}
-                          r={office.isHQ ? "8" : "6"}
-                          fill={office.isHQ ? "#2563EB" : "#3B82F6"}
-                          stroke="white"
-                          strokeWidth="2"
-                        />
-                        <text
-                          x={x}
-                          y={y - 15}
-                          textAnchor="middle"
-                          className="text-xs font-semibold"
-                          fill="#1F2937"
-                        >
-                          {office.city}
-                        </text>
-                      </g>
-                    );
-                  })}
-                </svg>
-              </div>
-            </div>
+          <div className="relative bg-gray-50 rounded-lg overflow-hidden mb-12 h-[500px] z-0">
+             <MapContainer 
+                center={[20, 0]} 
+                zoom={2} 
+                scrollWheelZoom={false} 
+                className="w-full h-full"
+                style={{ height: "100%", width: "100%" }}
+              >
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                {offices.map((office) => (
+                  <Marker 
+                    key={office.city} 
+                    position={office.coordinates}
+                  >
+                    <Popup>
+                      <div className="text-center">
+                        <h3 className="font-bold text-sm">{office.city}</h3>
+                        <p className="text-xs text-gray-600">{office.country}</p>
+                        {office.isHQ && <span className="text-blue-600 text-xs font-semibold">Headquarters</span>}
+                      </div>
+                    </Popup>
+                  </Marker>
+                ))}
+            </MapContainer>
           </div>
 
           {/* Office Locations Grid */}

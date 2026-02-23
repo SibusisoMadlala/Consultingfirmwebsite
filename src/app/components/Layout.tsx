@@ -1,10 +1,14 @@
 import { Outlet, Link, useLocation } from "react-router";
 import { Building2, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -31,7 +35,7 @@ export function Layout() {
             <Link to="/" className="flex items-center gap-2">
               <img 
                 src="/images/Logo%203.png" 
-                alt="IKHAYA Consulting" 
+                alt="Ikhaya Management Consultants" 
                 className="h-12 w-auto object-contain"
               />
             </Link>
@@ -100,11 +104,11 @@ export function Layout() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <Building2 className="h-8 w-8 text-blue-400" />
-                <div className="flex flex-col">
-                  <span className="font-bold text-xl">IKHAYA</span>
-                  <span className="text-xs text-gray-400">Consulting</span>
-                </div>
+                <img 
+                  src="/images/Logo%203.png" 
+                  alt="Ikhaya Management Consultants" 
+                  className="h-12 w-auto object-contain brightness-0 invert"
+                />
               </div>
               <p className="text-gray-400 text-sm max-w-md">
                 Strategic Management Consulting for the Built Environment
@@ -135,7 +139,7 @@ export function Layout() {
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
             <p>
-              © {new Date().getFullYear()} Ikhaya Consulting. All rights
+              © {new Date().getFullYear()} Ikhaya Management Consultants. All rights
               reserved.
             </p>
           </div>

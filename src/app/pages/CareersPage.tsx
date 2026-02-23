@@ -72,7 +72,7 @@ export function CareersPage() {
           />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-5xl mb-6">Careers at Ikhaya</h1>
+          <h1 className="text-4xl sm:text-5xl mb-6">Careers at Ikhaya Management Consultants</h1>
           <p className="text-xl text-gray-300 max-w-3xl">
             Join a team dedicated to transforming the built environment through
             strategic consulting and innovative solutions.
@@ -85,7 +85,7 @@ export function CareersPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl mb-4 text-gray-900">
-              Why Join Ikhaya Consulting
+              Why Join Ikhaya Management Consultants
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We invest in our people and create an environment where talent
@@ -117,7 +117,7 @@ export function CareersPage() {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  At Ikhaya Consulting, we foster a culture of excellence,
+                  At Ikhaya Management Consultants, we foster a culture of excellence,
                   innovation, and collaboration. Our team members are empowered
                   to bring their best ideas forward and make meaningful
                   contributions to client success.
@@ -290,7 +290,7 @@ export function CareersPage() {
               </div>
               <h3 className="font-semibold mb-2 text-gray-900">Offer</h3>
               <p className="text-sm text-gray-600">
-                Join the Ikhaya Consulting team
+                Join the Ikhaya Management Consultants team
               </p>
             </div>
           </div>

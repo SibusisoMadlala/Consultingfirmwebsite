@@ -97,7 +97,7 @@ export function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl mb-6 text-gray-900">
-                Why Choose Ikhaya Consulting
+                Why Choose Ikhaya Management Consultants
               </h2>
               <div className="space-y-6">
                 <div className="flex gap-4">

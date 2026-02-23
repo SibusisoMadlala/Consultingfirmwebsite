@@ -191,27 +191,59 @@ export function AboutPage() {
               Proud members of leading industry bodies
             </p>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow bg-opacity-90">
-              <ImageWithFallback
-                src="/images/image002.png"
-                alt="Affiliation Partner"
-                className="h-24 w-auto object-contain"
-              />
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow bg-opacity-90">
-              <ImageWithFallback
-                src="/images/image003.png"
-                alt="Affiliation Partner"
-                className="h-24 w-auto object-contain"
-              />
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow bg-opacity-90">
-              <ImageWithFallback
-                src="/images/image004.png"
-                alt="Affiliation Partner"
-                className="h-24 w-auto object-contain"
-              />
+          <div className="relative overflow-hidden group">
+            <div className="flex animate-marquee gap-8 whitespace-nowrap hover:pause-on-hover">
+              {/* First Set */}
+              <div className="flex items-center gap-8 shrink-0">
+                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow bg-opacity-90 min-w-[200px] flex justify-center">
+                  <ImageWithFallback
+                    src="/images/image002.png"
+                    alt="Affiliation Partner"
+                    className="h-24 w-auto object-contain"
+                  />
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow bg-opacity-90 min-w-[200px] flex justify-center">
+                  <ImageWithFallback
+                    src="/images/image003.png"
+                    alt="Affiliation Partner"
+                    className="h-24 w-auto object-contain"
+                  />
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow bg-opacity-90 min-w-[200px] flex justify-center">
+                  <ImageWithFallback
+                    src="/images/image004.png"
+                    alt="Affiliation Partner"
+                    className="h-24 w-auto object-contain"
+                  />
+                </div>
+                {/* Example from user request if needed, currently just images */}
+                {/* <div className="text-xl font-semibold text-gray-700">Afroteq Services: Expert Facility Management Solutions</div> */}
+              </div>
+
+              {/* Duplicate Set for infinite scroll */}
+              <div className="flex items-center gap-8 shrink-0">
+                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow bg-opacity-90 min-w-[200px] flex justify-center">
+                  <ImageWithFallback
+                    src="/images/image002.png"
+                    alt="Affiliation Partner"
+                    className="h-24 w-auto object-contain"
+                  />
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow bg-opacity-90 min-w-[200px] flex justify-center">
+                  <ImageWithFallback
+                    src="/images/image003.png"
+                    alt="Affiliation Partner"
+                    className="h-24 w-auto object-contain"
+                  />
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow bg-opacity-90 min-w-[200px] flex justify-center">
+                  <ImageWithFallback
+                    src="/images/image004.png"
+                    alt="Affiliation Partner"
+                    className="h-24 w-auto object-contain"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
