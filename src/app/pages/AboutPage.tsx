@@ -1,4 +1,4 @@
-import { Target, Eye, CheckCircle, Users, Handshake } from "lucide-react";
+import { Target, Eye, CheckCircle, Users, Handshake, Heart } from "lucide-react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 
 export function AboutPage() {
@@ -32,6 +32,12 @@ export function AboutPage() {
       title: "Sustainability",
       description:
         "We balance performance with responsibility to the environment and society.",
+    },
+    {
+      icon: Heart,
+      title: "Passion",
+      description:
+        "We are driven by enthusiasm and a genuine commitment to delivering exceptional results.",
     },
   ];
 

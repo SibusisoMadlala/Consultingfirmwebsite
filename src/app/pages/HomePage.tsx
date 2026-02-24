@@ -34,7 +34,7 @@ export function HomePage() {
               We are a South African consulting firm specialising in management
               solutions across the built environment. Our expertise spans
               assets, contracts, costs, facilities, procurement, projects, and
-              properties — but our true strength lies in guiding clients with
+              property management — but our true strength lies in guiding clients with
               strategic insight. We partner with organisations to unlock value,
               improve efficiency, and deliver sustainable outcomes in every
               aspect of the built environment.
